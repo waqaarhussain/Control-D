@@ -226,7 +226,12 @@ function openModal(deviceId) {
       </div>
       ${isCurrent ? '<span class="current-badge">ACTIVE</span>' : ''}
     `;
-    if (!isCurrent) opt.onclick = () => handleProfileSelect(deviceId, p.PK, p.name);
+    if (!isCurrent) {
+  const did = deviceId;
+  const pid = p.PK;
+  const pname = p.name;
+  opt.onclick = () => handleProfileSelect(did, pid, pname);
+}
     container.appendChild(opt);
   });
   document.getElementById('modal').classList.add('open');
