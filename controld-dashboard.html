@@ -263,8 +263,11 @@ function closePasscode() {
 function submitPasscode() {
   const entered = document.getElementById('passcode-input').value;
   if (entered === PASSCODE) {
+    const did = pendingDeviceId;
+    const pid = pendingProfileId;
+    const pname = pendingProfileName;
     closePasscode();
-    changeProfile(pendingDeviceId, pendingProfileId, pendingProfileName);
+    changeProfile(did, pid, pname);
   } else {
     document.getElementById('passcode-error').style.display = 'block';
     document.getElementById('passcode-input').value = '';
