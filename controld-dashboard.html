@@ -280,6 +280,7 @@ function closeModal(e) { if (e.target === document.getElementById('modal')) clos
 function closeModalDirect() { document.getElementById('modal').classList.remove('open'); }
 
 async function changeProfile(deviceId, profileId, profileName) {
+  console.log('deviceId:', deviceId, 'profileId:', profileId);
   showToast('Updating...');
   try {
     const res = await fetch(BASE + '/devices/' + deviceId, {
